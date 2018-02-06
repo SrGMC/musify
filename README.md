@@ -15,9 +15,9 @@ This is my first project as a computer science student. I've tried my best to wr
 
 ## [Releases](https://github.com/SrGMC/musify/releases)
 - macOS: Version 0.8.1 - 110MB / .zip file
-	![Download](http://)
+	![Download](https://github.com/SrGMC/musify/releases/download/0.8.1/Musify.zip)
 - Windows: Version 0.8.1
-	~~![Download](http://)~~ Not available yet.
+	~~![Download](#)~~ Not available yet.
 
 You can see the latest changes [here](#changelog).
 
