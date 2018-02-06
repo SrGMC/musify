@@ -1,0 +1,383 @@
+#body{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	background-color:#fff;
+}
+
+#body.dark{
+	background-color:#2F2F2F;
+}
+
+/* ==========================================================================
+   Toolbar and Header Fixes
+   ========================================================================== */
+header{
+	z-index:2;
+	-webkit-app-region: drag;
+}
+.toolbar-header{
+	height:40px ;
+	padding-left:74px;
+}
+.toolbar-actions{
+	margin: 0 ;
+	text-align:center;
+}
+.toolbar-form{
+	width: 16%;
+    height: 24px;
+    background-image: linear-gradient(to bottom,#fcfcfc 0,#f1f1f1 100%);
+    border-color: #c2c0c2 #c2c0c2 #a19fa1;
+    box-shadow: 0 1px 1px rgba(0,0,0,.06);
+    font-size: 12px;
+    text-align: center;
+}
+.toolbar-form:focus{
+	background-image: #ffffff;
+	text-align: left;
+}
+
+.toolbar-footer{
+	position: fixed;
+	z-index: 3;
+	right: 0;
+	bottom:0;
+	left: 0;
+	padding: 5px 5px;
+}
+
+/* ==========================================================================
+   Night Mode
+   ========================================================================== */
+#day{
+	display:inline;
+}
+
+#night{
+	display:none;
+}
+
+.toolbar.dark{
+    background-color: #2e302e;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2e302e), color-stop(100%, #171917));
+    background-image: -webkit-linear-gradient(top, #2e302e 0%, #171917 100%);
+    background-image: linear-gradient(to bottom, #2e302e 0%, #171917 100%);
+    border-bottom: 1px solid #3d3f3d;
+    border-top: 1px solid #3d3f3d;
+    box-shadow: inset 0 1px 0 #0a0b0a;
+    color:#cccccc;
+}
+.toolbar.dark .btn{
+	/*-webkit-filter: invert(100%);
+    filter: invert(100%);*/
+	border-top-color: #5e605e;
+  	border-right-color: #3d3f3d;
+  	border-bottom-color: #3d3f3d;
+  	border-left-color: #3d3f3d;
+  	background-color: #030303;
+  	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #0e0e0e), color-stop(0%, #030303));
+  	background-image: -webkit-linear-gradient(top, #0e0e0e 0%, #030303 100%);
+  	background-image: linear-gradient(to bottom, #0e0e0e 0%, #030303 100%);
+}
+.toolbar.dark .btn:active{
+	background-color: #222;
+    background-image: none;
+}
+.toolbar.dark .btn .icon{
+	color:#cccccc;
+}
+.toolbar.dark .btn{
+	color:#cccccc;
+}
+
+/* ==========================================================================
+   Player
+   ========================================================================== */
+/* Controls
+   ========================================================================== */
+.player-controls{
+	display: inline-flex;
+}
+.player-buttons{
+	margin-right:5px;
+	margin-left:5px;
+	font-size:40px;
+	line-height:0;
+}
+.player-buttons .icon-loop, 
+.player-buttons .icon-to-start, 
+.player-buttons .icon-to-end{
+	font-size:20px;
+	vertical-align: middle;    
+}
+.player-buttons .icon-shuffle {
+	font-size:15px;
+	vertical-align: middle;    
+}
+.player-buttons:nth-child(1), 
+.player-buttons:nth-child(3), 
+.player-buttons:nth-child(5) {
+	margin-top:10px;
+}
+.now-playing{
+	display: inline-block;
+	width:100px;
+	margin-top:10px;
+	margin-right:30px;
+	margin-left:30px;
+	text-align:center;
+}
+
+#play-btn{
+	display:inline;
+}
+#pause-btn{
+	display:none;
+}
+
+#shuffle.on, #loop.on{
+	color: rgb(0,122,255) ;
+}
+
+.addfile {
+	margin-top: 7px;
+}
+
+/* Window
+   ========================================================================== */
+.window-content{
+	position:fixed;
+	z-index:2;
+	top:316px;
+	right:0;
+	bottom:0;
+	left:0;
+	overflow-x:hidden;
+	text-align:center;
+}
+
+/*.window-content.dark{
+	-webkit-filter: invert(100%);
+   filter: invert(100%);
+}*/
+
+.player-window{
+	position:fixed;
+	z-index:2;
+	top:40px;
+	right:0;
+	left:0;
+	height:276px;
+	padding: 10px;
+	/*margin:10px;*/
+	background-color:#f5f5f5;
+	border-bottom: 1px solid #c2c0c2;
+	text-align:center ;
+}
+
+.player-window.dark{
+	background-color: #2F2F2F;
+	border-bottom: 1px solid #3D3F3D;
+	color:#cccccc;
+}
+.player-window .song{
+	position: fixed;
+    right: 0;
+    height:138px;
+    width: 44%;
+    margin-top: 0;
+    margin-right: 20px;
+    padding-left: 10px;
+    text-align: right;
+    vertical-align: top;
+}
+
+#song{
+	font-size:20px;
+}
+
+#album{
+	font-size: 14px;
+}
+.player-window img.shadow{
+	-webkit-box-shadow: 0 0 5px 0 rgba(51, 51, 51, 0.5);
+	-moz-box-shadow:    0 0 5px 0 rgba(51, 51, 51, 0.5);
+	box-shadow:         0 0 5px 0 rgba(51, 51, 51, 0.5);
+}
+
+.player-window.dark img.shadow{
+	-webkit-box-shadow: 0 0 5px 0 rgba(204, 204, 204, 0.5);
+	-moz-box-shadow:    0 0 5px 0 rgba(204, 204, 204, 0.5);
+	box-shadow:         0 0 5px 0 rgba(204, 204, 204, 0.5);
+}
+
+.player-window .volume{
+	position: fixed;
+    top: 200px;
+    right: 0;
+    width: 44%;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    vertical-align: top;
+    line-height:0.5;
+}
+
+#mute-btn{
+	display:none;
+	font-size:20px;
+}
+
+#mute-btn.on{
+	color: rgb(0,122,255) ;
+}
+#sound-btn{
+	display:inline;
+	font-size:20px;
+}
+
+input[type=range] {
+  background-color: transparent;
+  height: 26px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #A4A4A4;
+  border-radius: 50px;
+  border: 1px solid #9A9A9A;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+  border: 1px solid #CECECE;
+  height: 16px;
+  width: 16px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #A4A4A4;
+}
+
+.overlay{
+	position:fixed;
+	z-index: 3;
+	top:316px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-top:100px;
+	background-color: rgba(0, 0, 0, 0);
+	color:#333;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.overlay.dark{
+	color:#cccccc;
+}
+.drop {
+	display: none;
+}
+
+.no-songs{
+	display: none;
+}
+
+/* ==========================================================================
+   Songs Table
+   ========================================================================== */
+table{
+	width:100%;
+}
+tbody td:nth-child(1), 
+thead th:nth-child(1){
+	width:30px ;
+	padding: 2px 4px;
+	text-align:center;
+}
+tbody td:nth-child(2), 
+thead th:nth-child(2){
+	width:140px ;
+	padding: 2px 4px;
+}
+tbody td:nth-child(3), 
+thead th:nth-child(3){
+	width:140px ;
+	padding: 2px 4px;
+}
+tbody td:nth-child(4), 
+thead th:nth-child(4){
+	width:140px ;
+	padding: 2px 4px;
+}
+tbody td:nth-child(5), 
+thead th:nth-child(5){
+	width:28px;
+	padding: 2px 4px;
+	text-align: center;
+}
+
+.icon-cancel{
+	padding: 1px 4px;
+    padding-right: 4px;
+	background-color: #333;
+    border-radius: 2px;
+    text-align: center;
+    color:#ccc;
+}
+.window-content.dark .icon-cancel{
+	background-color: #ccc;
+	color:#333;
+}
+
+.icon-cancel:hover{
+	padding: 1px 4px;
+    padding-right: 4px;
+	background-color: #f00 !important;
+    border-radius: 2px;
+    text-align: center;
+    color:#fff !important;
+}
+
+tr.active{
+	color: #fff !important;
+    background-color: #116cd6 !important;
+}
+
+.window-content.dark thead,
+.window-content.dark tr:nth-child(even){
+	background-color: #0a0a0b;
+	color:#cccccc;
+}
+.window-content.dark th{
+	border-right: 1px solid #222222;
+    border-bottom: 1px solid #222222;
+}
+
+.window-content.dark tr{
+	background-color: #2F2F2F;
+	color:#cccccc;
+}
+

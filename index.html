@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Musify</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="body"></div>
+    <div class="window">
+        <!-- .toolbar-header sits at the top of your app -->
+        <header class="toolbar toolbar-header" id="toolbar">
+            <div class="toolbar-actions">
+                <button class="btn btn-default pull-right" id="nightStyle" style="margin-top: 7px;">
+                    <span class="icon icon-light-up" id="day"></span>
+                    <span class="icon icon-moon" id="night"></span>
+                </button>
+                <label for="addfile" class="btn btn-default pull-right addfile">
+                    <span class="icon icon-plus"></span>
+                </label>
+                <input id="addfile" type="file" style="display:none" multiple />
+                <div class="player-controls">
+                    <div class="player-buttons">
+                        <span class="icon icon-to-start" id="previous"></span>
+                    </div>
+                    <div class="player-buttons" id="play">
+                        <span class="icon icon-play" id="play-btn"></span>
+                        <span class="icon icon-pause" id="pause-btn"></span>
+                    </div>
+                    <div class="player-buttons">
+                        <span class="icon icon-to-end" id="next"></span>
+                    </div>
+                    <div class="now-playing">
+                        <span id="time">00:00</span> | <span id="total-time">00:00</span>
+                    </div>
+                    <div class="player-buttons">
+                        <span class="icon icon-loop" id="loop"></span>
+                        <span class="icon icon-shuffle" id="shuffle"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Your app's content goes inside .window-content -->
+        <div class="player-window" id="window1">
+            <img src="cover.png" id="cover" class="pull-left" style="width:250px;height:250px;"></img>
+            <div class="song pull-right">
+                <span id="song"></span><br>
+                <span id="album"></span><br><span id="artist"></span>
+            </div>
+            <div class="volume pull-right">
+                <div id="sound">
+                    <span class="icon icon-mute" id="mute-btn"></span>
+                    <span class="icon icon-sound" id="sound-btn"></span>
+                </div>
+                <input id="volume" type="range" min="0" max="1.0" step="0.01" value="1.0">
+            </div>
+        </div>
+        <div class="overlay no-songs" id="no-songs">
+            <h1>Your playlist is empty
+                </h1>
+                    <h3>Try adding songs with the <span class="icon icon-plus"></span> right above </h3>
+        </div>
+        <div class="window-content" id="window2">
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th class="number">No.</th>
+                        <th class="song">Song</th>
+                        <th class="album">Album</th>
+                        <th class="artist">Artist</th>
+                        <th class="length"></th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+            </table>
+        </div>
+        <footer class="toolbar toolbar-footer" id="footer">
+            <div class="toolbar-actions">
+                <button class="btn btn-default pull-right" id="clear">
+                    Clear
+                </button>
+            </div>
+        </footer>
+    </div>
+</body>
+<!-- Javascript -->
+<script src="js/js.js" charset="utf-8">
+</script>
+
+</html>
