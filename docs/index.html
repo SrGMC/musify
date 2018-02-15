@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="shortcut icon" type="image/png" href="512.png"/>
+
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+    <title>Musify | Simple and fast music player</title>
+    <meta property="og:title" content="Musify">
+    <meta property="og:locale" content="en_US">
+    <meta name="description" content="Musify is a simple, yet fast, Electron based music player.">
+    <meta property="og:description" content="Musify is a simple, yet fast, Electron based music player.">
+    <link rel="canonical" href="https://srgmc.github.io/musify/">
+    <meta property="og:url" content="https://srgmc.github.io/musify/">
+    <meta property="og:site_name" content="Musify">
+    <script type="application/ld+json">
+        {"name":"Musify","description":"Musify is a simple, yet fast, Electron based music player.","author":"SrGMC","@type":"WebSite","url":"https://srgmc.github.io/musify/","image":null,"publisher":null,"headline":"Musify","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="files/style.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="https://srgmc.github.io/musify">
+            	<img src="files/512.png">
+                <h1>Musify</h1>
+            </a>
+            <p>Musify is a simple, yet fast, Electron based music player.</p>
+
+            <ul>
+                <li><a href="https://github.com/SrGMC/musify/releases">View <strong>Releases</strong></a></li>
+                <li><a href="https://github.com/SrGMC/musify/zipball/master">Download <strong>ZIP Ball</strong></a></li>
+                <li><a href="https://github.com/SrGMC/musify">View on <strong>GitHub</strong></a></li>
+            </ul>
+            <div class="center"><a href="index.html"><b>EN</b></a> - <a href="es.html">ES</a></div>
+
+        </header>
+        <section>
+        	<div class="center">
+        		<a href="javascript:switchMode()">Switch Mode</a>
+        		<img src="files/screenshot_day.png" id="day" width="512">
+        		<img src="files/screenshot_night.png" id="night" style="display: none;" width="512">
+        	</div>
+            <p>Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework, currently available for macOS</p>
+            <h3 class="center"><a href="https://github.com/SrGMC/musify/releases">Latest releases</a></h3>
+
+            <h2>Features</h2>
+
+            <p>Musify is a simple music player that features:</p>
+            <ul>
+                <li>Night and day modes</li>
+                <li>Loop mode</li>
+                <li>Notifications on song change</li>
+            </ul>
+
+            <h2>Issues</h2>
+            <ul>
+                <li>Shuffle mode is not implemented yet.</li>
+            </ul>
+            <p>As this is my first project as a computer science student, I've tried my best to write a code that follows common coding conventions. If you encounter any bugs or issues, feel free to contribute to the project. More information can be found <a href="https://github.com/SrGMC/musify#contributing">here</a>.</p>
+
+        </section>
+        <footer>
+
+            <p>This project is maintained by <a href="https://github.com/SrGMC">SrGMC</a></p>
+
+            <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </footer>
+    </div>
+    <script src="files/scale.js"></script>
+    <script type="text/javascript">
+    	var mode = 0
+    	function switchMode(){
+    		if(mode === 0){
+    			document.getElementById('day').style.display = 'none'
+    			document.getElementById('night').style.display = 'inline'
+    			mode = 1
+    		} else {
+    			document.getElementById('day').style.display = 'inline'
+    			document.getElementById('night').style.display = 'none'
+    			mode = 0
+    		}
+    	}
+    </script>
+
+</body>
+
+</html>
