@@ -9,7 +9,7 @@
     "start": "./node_modules/.bin/electron .",
     "postinstall": "npm install --save-dev dialogs electron electron-builder electron-packager musicmetadata photonkit snazzy && npm install --save dialogs electron musicmetadata",
     "fix": "standard --verbose --fix | snazzy",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=512.icns --prune=true --out=dist",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=512.icns --prune=true --out=dist --asar",
     "package-win": "electron-packager . musify --overwrite --asar=true --platform=win32 --arch=ia32 --icon=512.ico --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Musify\"",
     "package-linux": "electron-packager . musify --overwrite --asar=true --platform=linux --arch=x64 --icon=512.png --prune=true --out=dist"
   },
