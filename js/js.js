@@ -246,9 +246,8 @@ function isFirst () {
 }
 
 function update () {
-  
-  isEmpty()  
-  
+  isEmpty()
+
   // Updates time
   if (!isEmpty() && toHHMMSS(audio.duration) !== 'NaN:NaN:NaN') {
     document.getElementById('total-time').innerHTML = toHHMMSS(audio.duration)
@@ -414,7 +413,7 @@ document.getElementById('clear').addEventListener('click', function () {
     if (ok === true) {
       audio.pause()
       playing = false
-      document.getElementById('table').innerHTML = ""
+      document.getElementById('table').innerHTML = ''
       db = {'path': [], 'id': [], 'track': [], 'title': [], 'album': [], 'artist': [], 'picture': []}
     }
   })

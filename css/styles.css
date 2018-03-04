@@ -32,7 +32,7 @@ header{
 .toolbar-form{
 	width: 16%;
     height: 24px;
-    background-image: linear-gradient(to bottom,#fcfcfc 0,#f1f1f1 100%);
+    background-image: linear-gradient(to bottom, #fcfcfc 0, #f1f1f1 100%);
     border-color: #c2c0c2 #c2c0c2 #a19fa1;
     box-shadow: 0 1px 1px rgba(0,0,0,.06);
     font-size: 12px;
@@ -68,11 +68,17 @@ header{
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2e302e), color-stop(100%, #171917));
     background-image: -webkit-linear-gradient(top, #2e302e 0%, #171917 100%);
     background-image: linear-gradient(to bottom, #2e302e 0%, #171917 100%);
-    border-bottom: 1px solid #3d3f3d;
-    border-top: 1px solid #3d3f3d;
     box-shadow: inset 0 1px 0 #0a0b0a;
     color:#cccccc;
 }
+
+.toolbar.dark.toolbar-header{
+	border-bottom: 1px solid #3d3f3d;
+}
+.toolbar.dark.toolbar-footer{
+	border-top: 1px solid #3d3f3d;
+}
+
 .toolbar.dark .btn{
 	/*-webkit-filter: invert(100%);
     filter: invert(100%);*/
@@ -156,7 +162,7 @@ header{
 	z-index:2;
 	top:316px;
 	right:0;
-	bottom:0;
+	bottom:36px;
 	left:0;
 	overflow-x:hidden;
 	text-align:center;

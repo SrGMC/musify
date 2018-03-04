@@ -1,6 +1,12 @@
-const {app, BrowserWindow} = require('electron')
+const electron = require('electron')
+const app = electron.app
+const Menu = electron.Menu
+const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
+
+// Replace '..' with 'about-window'
+const openAboutWindow = require('about-window').default
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -36,6 +42,110 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+
+  const template = [
+    {
+      label: app.getName(),
+      submenu: [
+        {
+          label: 'About',
+          click: () =>
+            openAboutWindow({
+              icon_path: path.join(__dirname, '512.png'),
+              copyright: 'Copyright (c) 2018 SrGMC',
+              package_json_dir: __dirname,
+              bug_report_url: 'https://github.com/SrGMC/musify/issues',
+              homepage: 'https://srgmc.github.io/musify/',
+              license: 'GPL-3.0',
+              description: 'Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.' + 
+              '\n\nThanks to:' + 
+              '\n@moenawar',
+              win_options: {
+                height: 500,
+                width: 400,
+                maxHeight: 500,
+                minWidth: 400,
+                maxWidth: 400
+              },
+              open_devtools: process.env.NODE_ENV !== 'production'
+            })
+        }
+      ]
+    },
+    {
+      label: 'View',
+      submenu: [
+        {role: 'reload'},
+        {role: 'forcereload'},
+        {role: 'toggledevtools'},
+        {type: 'separator'},
+        {role: 'togglefullscreen'}
+      ]
+    },
+    {
+      role: 'window',
+      submenu: [
+        {role: 'minimize'},
+        {role: 'close'}
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Website',
+          click () { require('electron').shell.openExternal('https://srgmc.github.io/musify/') }
+        }
+      ]
+    }
+  ]
+  
+  if (process.platform === 'darwin') {
+    template[0].submenu = [
+      {
+        label: 'About',
+        click: () =>
+          openAboutWindow({
+          icon_path: path.join(__dirname, '512.png'),
+          copyright: 'Copyright (c) 2018 SrGMC',
+          package_json_dir: __dirname,
+          bug_report_url: 'https://github.com/SrGMC/musify/issues',
+          homepage: 'https://srgmc.github.io/musify/',
+          license: 'GPL-3.0',
+          description: 'Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.' + 
+          '\n\nThanks to:' + 
+          '\n@moenawar',
+          win_options: {
+            height: 500,
+            width: 400,
+            maxHeight: 500,
+            minWidth: 400,
+            maxWidth: 400
+          },
+          open_devtools: process.env.NODE_ENV !== 'production'
+        })
+      },
+      {type: 'separator'},
+      {role: 'services', submenu: []},
+      {type: 'separator'},
+      {role: 'hide'},
+      {role: 'hideothers'},
+      {role: 'unhide'},
+      {type: 'separator'},
+      {role: 'quit'}
+    ]
+  
+    // Window menu
+    template[2].submenu = [
+      {role: 'close'},
+      {role: 'minimize'},
+      {type: 'separator'},
+      {role: 'front'}
+    ]
+  }
+
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
 }
 
 // This method will be called when Electron has finished

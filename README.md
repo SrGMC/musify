@@ -12,46 +12,56 @@ This is my first project as a computer science student. I've tried my best to wr
  - [Contributing](#contributing)
  - [Versioning](#versioning)
  - [Changelog](#changelog)
+ - [Acknowledgements](#acknowledgements)
 
 ## [Releases](https://github.com/SrGMC/musify/releases)
-- macOS: Version 0.8.1 - 110MB / .zip file
-	![Download](https://github.com/SrGMC/musify/releases/download/0.8.1/Musify.zip)
-- Windows: Version 0.8.1
-	~~![Download](#)~~ Not available yet.
+- macOS: Version 0.8.2 - 110MB / .zip file
+	![Download](https://github.com/SrGMC/musify/releases/download/0.8.2/Musify.zip)
 
 You can see the latest changes [here](#changelog).
 
 ## Development
 This app is built using Electron. It requires the following dependencies:
 
+```bash
     dialogs >=1.1.20
     electron >=1.7.11
     electron-builder >=19.55.3
     musicmetadata: >=2.0.5
     photonkit: >=0.1.2
     snazzy: >=7.0.0
-    
- To start developing, run the following commands (you'll need [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) already installed in your system):
+    about-window: >= 1.10.0
+```
 
+To start developing, run the following commands (you'll need [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) already installed in your system):
+
+```bash
     git clone https://github.com/SrGMC/musify.git
     cd musify
     npm install standard -g
-    npm install
+    npm run-script postinstall
+ ```
 
 To run the app, simply run:
 
+```bash
     npm start
-    
+```
+
 To fix js files, simply run:
 
+```bash
     npm run-script fix
+```
 
 To build binary files, simply run one of the following:
 
+```bash
     npm run-script package-mac
     npm run-script package-windows
     npm run-script package-linux
-    
+```
+
 ## Contributing
 If you want to contribute, please follow this guidelines:
 ### Feedback
@@ -110,6 +120,12 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 
 ## Changelog
 All the releases can be found [here](https://github.com/SrGMC/musify/releases).
+
+### beta 0.8.2:
+* Fixed footer bar that hid the last items on the playlist
+* New logo by [@moenawar](https://github.com/moenawar85) [#1](https://github.com/SrGMC/musify/issues/1)
+* Added new about window
+
 ### beta 0.8.1:
 * Fixes a problem where songs removed could still be played
 * Adds a clear button
@@ -117,4 +133,11 @@ All the releases can be found [here](https://github.com/SrGMC/musify/releases).
 * Fixes a problem that notified continuously a song change when the playlist ended
 
 ## License
-Copyright @SrGMC. Released under MIT.
+Copyright @SrGMC. Released under GPL-3.0.
+
+## Acknowledgements
+- Creator: [@SrGMC](https://github.com/SrGMC)
+     + [Twitter](https://twitter.com/Sr_GMC)
+- Logo: [@moenawar](https://github.com/moenawar85)
+     + [Steemit contribution](https://steemit.com/utopian-io/@moenawar/my-new-logo-design-for-musify)
+     + [Twitter](https://twitter.com/moen85)

@@ -6,3 +6,9 @@ node_modules
 
 #Releases
 dist
+
+#zip files
+.zip
+
+#ignore
+ignore
