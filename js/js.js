@@ -1,11 +1,12 @@
 var fs = require('fs')
+var path = require('path')
 var mm = require('musicmetadata')
 var Dialogs = require('dialogs')
 var dialogs = Dialogs(opts = {})
 
 var audio = new Audio('')
 var db = {'path': [], 'id': [], 'track': [], 'title': [], 'album': [], 'artist': [], 'picture': []}
-var index = 0  // Reference to the index of the files object
+var index = 0 // Reference to the index of the files object
 var nextId = 0 // This is the id of the next song to add
 
 var track = ''
@@ -37,15 +38,36 @@ function toHHMMSS (seconds) { // https://stackoverflow.com/a/34841026
   var m = Math.floor(input / 60) % 60
   var s = input % 60
   return [h, m, s]
-        .map(v => v < 10 ? '0' + v : v)
-        .filter((v, i) => v !== '00' || i > 0)
-        .join(':')
+    .map(v => v < 10 ? '0' + v : v)
+    .filter((v, i) => v !== '00' || i > 0)
+    .join(':')
+}
+
+function isAudioFile (filePath) {
+  var extension = path.extname(filePath).toLocaleLowerCase()
+  switch (extension) {
+    case '.aif':
+    case '.aiff':
+    case '.asf':
+    case '.flac':
+    case '.oga':
+    case '.opus':
+    case '.ogg':
+    case '.mp2':
+    case '.mp3':
+    case '.m2a':
+    case '.wav':
+    case '.wma':
+      return true
+
+    default:
+      return false
+  }
 }
 
 function addSongs (files) {
   for (let i = 0; i < files.length; i++) {
-    var ext = files[i].path.split('.')[files[i].path.split('.').length - 1]
-    if (ext === 'mp3' || ext === 'm4a' || ext === 'aac') {
+    if (isAudioFile(files[i].path)) {
       var parser = mm(fs.createReadStream(files[i].path), function (err, metadata) {
         if (err) throw console.log(err)
 
