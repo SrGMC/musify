@@ -19,13 +19,12 @@
     "electron": "^1.8.2",
     "electron-builder": "^19.56.2",
     "electron-packager": "^11.0.1",
-    "musicmetadata": "^2.0.5",
     "photonkit": "^0.1.2",
     "snazzy": "^7.0.0"
   },
   "dependencies": {
+    "about-window": "^1.10.0",
     "dialogs": "^1.1.20",
-    "musicmetadata": "^2.0.5",
-    "about-window": "^1.10.0"
+    "music-metadata": "^2.2.0"
   }
 }
