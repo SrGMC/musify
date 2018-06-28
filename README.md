@@ -69,6 +69,7 @@ To build binary files, simply run one of the following:
 - [] Sort songs by attribute
 - [] Obtain online metadata when song does not have metadata
 - [] Play from YouTube
+- [] Prevent adding an already added song
 
 ## Contributing
 If you want to contribute, please follow this guidelines:
