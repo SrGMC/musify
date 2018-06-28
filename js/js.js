@@ -159,7 +159,9 @@ function prevSong () {
     audio.pause()
     playing = false
   }
-  if (loop === true && isFirst()) {
+  if(audio.currentTime >= 10){
+    playSong(db.id[index])
+  } else if (loop === true && isFirst()) {
     playSong(db.id[db.id.length - 1])
     notify('song', 0)
   } else if (loop === false && isFirst()) {
@@ -328,6 +330,20 @@ function update () {
   localStorage.setItem('nightStyle', nightStyle)
   localStorage.setItem('muted', muted)
 
+  //Update db when no songs are left
+  if(document.getElementById('table').innerHTML.indexOf("tr") === -1){
+      playing = false
+      db = {'path': [], 'id': [], 'track': [], 'title': [], 'album': [], 'artist': [], 'picture': []}
+      loaded = false
+      index = 0
+      nextId = 0
+      document.getElementById('song').innerHTML = ''
+      document.getElementById('album').innerHTML = ''
+      document.getElementById('artist').innerHTML = ''
+      document.getElementById('cover').src = 'cover.png'
+      document.getElementById('time').innerHTML = "00:00"
+  }
+
   setTimeout(update, 100)
 }
 
@@ -380,7 +396,7 @@ document.getElementById('nightStyle').addEventListener('click', function () {
 })
 
 document.getElementById('play').addEventListener('click', function () {
-  if (loaded === false) {
+  if (loaded === false && nextId !== 0) {
     playing = true
     loaded = true
     if (exists(db.path[index])) {
@@ -392,7 +408,7 @@ document.getElementById('play').addEventListener('click', function () {
     } else {
       notify('error', 2)
     }
-  } else if (playing === false) {
+  } else if (playing === false && nextId !== 0) {
     playing = true
     audio.play()
   } else {
@@ -401,7 +417,7 @@ document.getElementById('play').addEventListener('click', function () {
   }
 })
 
-document.getElementById('shuffle').addEventListener('click', function () {
+/*document.getElementById('shuffle').addEventListener('click', function () {
   if (shuffle === false) {
     shuffle = true
     document.getElementById('shuffle').classList.add('on')
@@ -410,7 +426,7 @@ document.getElementById('shuffle').addEventListener('click', function () {
     document.getElementById('shuffle').classList.remove('on')
   }
   console.log('Shuffle: ' + shuffle)
-})
+})*/
 
 document.getElementById('loop').addEventListener('click', function () {
   if (loop === false) {
@@ -435,9 +451,7 @@ document.getElementById('clear').addEventListener('click', function () {
   dialogs.confirm('Are you sure? This action will remove all the songs from your current playlist', function (ok) {
     if (ok === true) {
       audio.pause()
-      playing = false
       document.getElementById('table').innerHTML = ''
-      db = {'path': [], 'id': [], 'track': [], 'title': [], 'album': [], 'artist': [], 'picture': []}
     }
   })
   if (isEmpty()) {
