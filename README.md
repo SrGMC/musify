@@ -38,7 +38,6 @@ To start developing, run the following commands (you'll need [Node.js](https://n
 ```bash
     git clone https://github.com/SrGMC/musify.git
     cd musify
-    npm install standard -g
     npm run-script postinstall
  ```
 
