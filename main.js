@@ -57,9 +57,10 @@ function createWindow () {
               bug_report_url: 'https://github.com/SrGMC/musify/issues',
               homepage: 'https://srgmc.github.io/musify/',
               license: 'GPL-3.0',
-              description: 'Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.' + 
-              '\n\nThanks to:' + 
-              '\n@moenawar',
+              description: 'Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.' +
+              '\n\nThanks to:' +
+              '\n@moenawar'+
+              '\n@Borewit',
               win_options: {
                 height: 500,
                 width: 400,
@@ -99,7 +100,7 @@ function createWindow () {
       ]
     }
   ]
-  
+
   if (process.platform === 'darwin') {
     template[0].submenu = [
       {
@@ -112,8 +113,8 @@ function createWindow () {
           bug_report_url: 'https://github.com/SrGMC/musify/issues',
           homepage: 'https://srgmc.github.io/musify/',
           license: 'GPL-3.0',
-          description: 'Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.' + 
-          '\n\nThanks to:' + 
+          description: 'Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.' +
+          '\n\nThanks to:' +
           '\n@moenawar',
           win_options: {
             height: 500,
@@ -134,7 +135,7 @@ function createWindow () {
       {type: 'separator'},
       {role: 'quit'}
     ]
-  
+
     // Window menu
     template[2].submenu = [
       {role: 'close'},
