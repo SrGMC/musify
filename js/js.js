@@ -1,6 +1,6 @@
 var fs = require('fs')
 var path = require('path')
-var mm = require('musicmetadata')
+var mm = require('music-metadata')
 var Dialogs = require('dialogs')
 var dialogs = Dialogs(opts = {})
 
@@ -68,14 +68,14 @@ function isAudioFile (filePath) {
 function addSongs (files) {
   for (let i = 0; i < files.length; i++) {
     if (isAudioFile(files[i].path)) {
-      var parser = mm(fs.createReadStream(files[i].path), function (err, metadata) {
-        if (err) throw console.log(err)
+      console.log('Adding: ' + files[i].path)
+      mm.parseFile(files[i].path).then(function (metadata) {
 
         var n = db.title.length
         db.path[n] = files[i].path
-        console.log(metadata.title === '')
+        console.log(metadata.common.title === '')
 
-        if (metadata.title === '') {
+        if (metadata.common.title === '') {
           db.track[n] = 1
           db.title[n] = files[i].path.split('/')[files[i].path.split('/').length - 1]
           db.album[n] = 'No album'
@@ -83,11 +83,11 @@ function addSongs (files) {
           db.picture[n] = 'cover.png'
           db.id[n] = nextId
         } else {
-          db.track[n] = parseInt(metadata.track.no, 10)
-          db.title[n] = metadata.title
-          db.album[n] = metadata.album
-          db.artist[n] = metadata.artist[0]
-          db.picture[n] = metadata.picture[0]
+          db.track[n] = metadata.common.track.no
+          db.title[n] = metadata.common.title
+          db.album[n] = metadata.common.album
+          db.artist[n] = metadata.common.artist
+          db.picture[n] = metadata.common.picture ? metadata.common.picture[0] : undefined
           db.id[n] = nextId
         }
 
@@ -107,8 +107,9 @@ function addSongs (files) {
         console.log('Added to list: "' + parsed[0] + '" with id: ' + db.id[n])
 
         nextId++
+      }).catch(function(err) {
+        console.log(err)
       })
-      console.log('Added: ' + files[i].path)
     } else {
       notify('error', 1)
     }
