@@ -65,7 +65,7 @@ To build binary files, simply run one of the following:
 - [] Shuffle songs
 - [] Loop only one song
 - [] Windows style
-* [x] Start song again when previous song is pressed
+- [x] Start song again when previous song is pressed
 - [] Sort songs by attribute
 - [] Obtain online metadata when song does not have metadata
 - [] Play from YouTube
