@@ -19,7 +19,7 @@ var nightStyle = false
 var muted = false
 
 var playing = false
-var loaded = false
+var loaded = false //Tells if the playlist is loaded
 
 if (localStorage.getItem('loop') !== null) {
   loop = localStorage.getItem('loop', loop) === 'true'
@@ -192,10 +192,6 @@ function removeSong (idToRemove) {
       db.id.splice(db.id.indexOf(idToRemove), 1)
     }
   })
-  if (isEmpty()) {
-    loaded = false
-    index = 0
-  }
 }
 
 function selectSong () {
@@ -454,10 +450,6 @@ document.getElementById('clear').addEventListener('click', function () {
       document.getElementById('table').innerHTML = ''
     }
   })
-  if (isEmpty()) {
-    loaded = false
-    index = 0
-  }
 })
 
 document.getElementById('sound').addEventListener('click', function () {
