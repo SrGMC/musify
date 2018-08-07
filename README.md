@@ -61,7 +61,7 @@ To build binary files, simply run one of the following:
     npm run-script package-linux
 ```
 
-##TODO
+## TODO
 - [] Shuffle songs
 - [] Loop only one song
 - [] Windows style
