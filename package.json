@@ -1,7 +1,7 @@
 {
   "name": "Musify",
   "productName": "Musify",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on the Electron Framework.",
   "main": "main.js",
   "author": "Alvaro Galisteo",
@@ -15,17 +15,16 @@
   "devDependencies": {
     "about-window": "^1.12.1",
     "dialogs": "^1.1.20",
-    "electron": "^1.8.7",
+    "electron": "^4.0.5",
     "electron-builder": "^19.56.2",
-    "electron-packager": "^11.2.0",
-    "music-metadata": "^2.4.2",
+    "electron-packager": "^13.1.0",
+    "music-metadata": "^2.8.1",
     "photonkit": "^0.1.2",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1"
   },
   "dependencies": {
     "about-window": "^1.11.1",
-    "dialogs": "^1.1.20",
-    "music-metadata": "^2.4.2"
+    "dialogs": "^1.1.20"
   }
 }
