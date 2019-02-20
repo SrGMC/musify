@@ -3,7 +3,7 @@
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.
-This is my first project as a computer science student. I've tried my best to write a code that follows common coding conventions, but keep in mind that you may find spaghetti code, poorly documented code or common beginner errors. If so, feel free to help and contribute to improve this app.
+This is my first project as a computer science student. I've tried my best to write a code that follows common coding conventions, but keep in mind that you may find common beginner errors. If so, feel free to help and contribute to improve this app.
 
 ## Table of Contents
 
@@ -15,8 +15,7 @@ This is my first project as a computer science student. I've tried my best to wr
  - [Acknowledgements](#acknowledgements)
 
 ## [Releases](https://github.com/SrGMC/musify/releases)
-- macOS: Version 0.8.2 - 110MB / .zip file
-	![Download](https://github.com/SrGMC/musify/releases/download/0.8.2/Musify.zip)
+- macOS: Version 0.8.3 - 62.9MB / .zip file [Download](https://github.com/SrGMC/musify/releases/download/0.8.3/Musify.zip)
 
 You can see the latest changes [here](#changelog).
 
@@ -24,13 +23,13 @@ You can see the latest changes [here](#changelog).
 This app is built using Electron. It requires the following dependencies:
 
 ```bash
-    dialogs >=1.1.20
-    electron >=1.7.11
-    electron-builder >=19.55.3
-    musicmetadata: >=2.0.5
-    photonkit: >=0.1.2
-    snazzy: >=7.0.0
-    about-window: >= 1.10.0
+    dialogs
+    electron
+    electron-builder
+    musicmetadata
+    photonkit
+    snazzy
+    about-window
 ```
 
 To start developing, run the following commands (you'll need [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) already installed in your system):
@@ -39,9 +38,9 @@ To start developing, run the following commands (you'll need [Node.js](https://n
     git clone https://github.com/SrGMC/musify.git
     cd musify
     npm run-script postinstall
- ```
+```
 
-To run the app, simply run:
+To run the app, simply execute:
 
 ```bash
     npm start
@@ -89,6 +88,9 @@ Check out the [CONTRIBUTING.md file](https://github.com/SrGMC/musify/blob/master
 
 ## Changelog
 All the releases can be found [here](https://github.com/SrGMC/musify/releases).
+
+### beta 0.8.3:
+* Security updates
 
 ### beta 0.8.2:
 * Fixed footer bar that hid the last items on the playlist
