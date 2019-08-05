@@ -6,6 +6,7 @@ var dialogs = Dialogs(opts = {})
 
 var audio = new Audio('')
 var db = {'path': [], 'id': [], 'track': [], 'title': [], 'album': [], 'artist': [], 'picture': []}
+var shuffledIndex = [0]
 var index = 0 // Reference to the index of the files object
 var nextId = 0 // This is the id of the next song to add
 
@@ -136,6 +137,19 @@ function playSong (idToPlay) {
   }
 }
 
+function random(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min)
+}
+
+function randomIndex(){
+  var rand
+  do {
+    rand = random(0, db.path.length-1)
+  } while (shuffledIndex.indexOf(rand) !== -1)
+  shuffledIndex.push(rand)
+  return rand
+}
+
 function nextSong () {
   if (playing === true) {
     audio.pause()
@@ -144,9 +158,33 @@ function nextSong () {
   if (loop === true && isLast()) {
     playSong(db.id[0])
     notify('song', 0)
-  } else if (loop === false && isLast()) {
+  } else if (loop && shuffle && index === shuffledIndex[shuffledIndex.length - 1] 
+  		&& shuffledIndex.length === db.path.length){
+  	index = 0
+    playSong(index)
+    notify('song', 0)
+  } else if (loop === false && shuffle === false && isLast()) {
     console.log('End of playlist')
     playing = false
+  } else if (loop === false && shuffle && shuffledIndex.length === db.path.length 
+  		&& index === shuffledIndex[shuffledIndex.length - 1]){
+    console.log('End of playlist')
+    playing = false
+  } else if (shuffle === true){
+    // If index is already in shuffledIndex, play the next one in suffledIndex
+    if(shuffledIndex.indexOf(index) !== -1){
+      var nextIndex = shuffledIndex.indexOf(index)+1
+      if (nextIndex >= shuffledIndex.length || shuffledIndex[nextIndex] === undefined) {
+        index = randomIndex()
+      } else {
+        index = nextIndex
+      }
+    } else {
+      index = randomIndex()
+      console.log("Random index = " + index)
+    }
+    playSong(db.id[index])
+    notify('song', 0)
   } else {
     index++
     playSong(db.id[index])
@@ -162,13 +200,25 @@ function prevSong () {
   if(audio.currentTime >= 10){
     playSong(db.id[index])
   } else if (loop === true && isFirst()) {
-    playSong(db.id[db.id.length - 1])
+    if (shuffle === true){
+      index = shuffledIndex[shuffledIndex.length-1]
+    } else {
+      index = db.id.length - 1
+    }
+    playSong(db.id[index])
     notify('song', 0)
-  } else if (loop === false && isFirst()) {
+  } else if (loop === false && shuffle === false && isFirst()) {
     console.log('End of playlist')
     playing = false
+  } else if (loop === false && shuffle && index === shuffledIndex[0]){
+    console.log('End of playlist')
+    playing = false
+  } else if (shuffle === true){
+    index = shuffledIndex[shuffledIndex.indexOf(index)-1]
+    playSong(db.id[index])
+    notify('song', 0)
   } else {
-    index--
+  	index--
     playSong(db.id[index])
     notify('song', 0)
   }
@@ -413,7 +463,7 @@ document.getElementById('play').addEventListener('click', function () {
   }
 })
 
-/*document.getElementById('shuffle').addEventListener('click', function () {
+document.getElementById('shuffle').addEventListener('click', function () {
   if (shuffle === false) {
     shuffle = true
     document.getElementById('shuffle').classList.add('on')
@@ -422,7 +472,7 @@ document.getElementById('play').addEventListener('click', function () {
     document.getElementById('shuffle').classList.remove('on')
   }
   console.log('Shuffle: ' + shuffle)
-})*/
+})
 
 document.getElementById('loop').addEventListener('click', function () {
   if (loop === false) {
