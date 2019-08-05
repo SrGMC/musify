@@ -5,6 +5,8 @@
 Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.
 This is my first project as a computer science student. I've tried my best to write a code that follows common coding conventions, but keep in mind that you may find common beginner errors. If so, feel free to help and contribute to improve this app.
 
+### Development is now in the [dev branch](https://github.com/SrGMC/musify/tree/dev)
+
 ## Table of Contents
 
  - [Releases](#releases)
@@ -61,13 +63,11 @@ To build binary files, simply run one of the following:
 ```
 
 ## TODO
-- [ ] Shuffle songs
-- [ ] Loop only one song
+- [ ] Shuffle songs (WIP in [dev branch](https://github.com/SrGMC/musify/tree/dev))
+- [ ] Loop only one song (WIP in [dev branch](https://github.com/SrGMC/musify/tree/dev))
 - [x] Start song again when previous song button is pressed
-- [ ] Sort songs by attribute
-- [ ] Obtain online metadata when song does not have metadata
 - [ ] Prevent adding an already added song
-- [ ] Autoupdate
+- [ ] Code cleanup
 
 ## Contributing
 If you want to contribute, please follow this guidelines:
