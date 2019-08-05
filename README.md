@@ -1,5 +1,5 @@
 
-# Musify
+# Musify Development Branch
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 Musify is a simple and fast music player, built from the ground up, using web technologies such as HTML, CSS and JavaScript, all wrapped on Electron Framework.
@@ -7,12 +7,22 @@ This is my first project as a computer science student. I've tried my best to wr
 
 ## Table of Contents
 
+ - [WIP](#wip)
+ - [TODO](#todo)
  - [Releases](#releases)
  - [Development](#development)
- - [TODO](#todo)
  - [Contributing](#contributing)
  - [Changelog](#changelog)
  - [Acknowledgements](#acknowledgements)
+
+## WIP
+- [ ] Shuffle songs ([\#10](https://github.com/SrGMC/musify/issues/10))
+- [ ] Loop only one song ([\#10](https://github.com/SrGMC/musify/issues/10))
+- [ ] Code cleanup
+
+## TODO
+- [x] Start song again when previous song button is pressed
+- [ ] Prevent adding an already added song 
 
 ## [Releases](https://github.com/SrGMC/musify/releases)
 - macOS: Version 0.8.3 - 62.9MB / .zip file [Download](https://github.com/SrGMC/musify/releases/download/0.8.3/Musify.zip)
@@ -59,15 +69,6 @@ To build binary files, simply run one of the following:
     npm run-script package-windows
     npm run-script package-linux
 ```
-
-## TODO
-- [ ] Shuffle songs
-- [ ] Loop only one song
-- [x] Start song again when previous song button is pressed
-- [ ] Sort songs by attribute
-- [ ] Obtain online metadata when song does not have metadata
-- [ ] Prevent adding an already added song
-- [ ] Autoupdate
 
 ## Contributing
 If you want to contribute, please follow this guidelines:
