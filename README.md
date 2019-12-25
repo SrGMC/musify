@@ -1,3 +1,4 @@
+**Notice**: Due to studies and other reasons, I'm currently unable to continue developing the project, however, new pull requests are welcome and I'll pick it up when my time allows.
 
 # Musify
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
